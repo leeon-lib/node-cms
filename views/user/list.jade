@@ -2,4 +2,5 @@ extends ../layout
 block content
   div.panel
     div.panel-body
-      div.alert.alert-danger 欢迎
+      each user in users
+        p= user.email

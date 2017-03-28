@@ -14,13 +14,15 @@ var user       = {};
 // 列表页
 user.showList = function(req, res, next)
 {/*{{{*/
-	User.getAllUndeleted(function(err, users) {
-		if (err) {
-			return next(err);
-		}
+  User.getAllUndeleted(function(err, users) {
+    if (err) {
+      return next(err);
+    }
 
-		res.send(users);
-	});
+    res.render('user/list', {
+      users: users
+    });
+  });
 }/*}}}*/
 
 module.exports = user;
